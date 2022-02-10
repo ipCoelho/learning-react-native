@@ -1,12 +1,6 @@
 import React from 'react';
-import {
-  FlatList,
-  Text,
-  View,
-  Image,
-  ScrollView,
-  StyleSheet,
-} from 'react-native';
+import {FlatList, View, ScrollView} from 'react-native';
+import CardItem from './CardItem';
 
 const usersData = [
   {
@@ -27,47 +21,12 @@ const usersData = [
   },
 ];
 
-const Card = ({item}) => {
-  <View>
-    <Text style={card.title}>{item.title}</Text>
-    <Text style={card.desc}>{item.desc}</Text>
-    <Image style={card.image} source={{uri: item.image.uri}} />
-    <Text style={card.text}>{item.text}</Text>
-  </View>;
-};
 const App = () => (
-  <ScrollView style={card.padding}>
+  <ScrollView style={{padding: 20}}>
     <View>
-      <FlatList data={usersData} renderItem={Card} />
+      <FlatList data={usersData} renderItem={CardItem} />
     </View>
   </ScrollView>
 );
-
-const card = StyleSheet.create({
-  title: {
-    fontWeight: 'bold',
-    fontSize: 20,
-    color: 'black',
-  },
-  desc: {
-    color: 'grey',
-    marginTop: -2,
-  },
-  image: {
-    width: 320,
-    height: 170,
-    borderRadius: 3,
-    alignSelf: 'center',
-  },
-  text: {
-    fontSize: 12,
-    color: 'grey',
-    marginBottom: 20,
-    marginTop: 5,
-    marginStart: 5,
-    marginEnd: 5,
-  },
-  padding: {padding: 20},
-});
 
 export default App;
