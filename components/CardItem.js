@@ -28,13 +28,13 @@ const card = StyleSheet.create({
   padding: {padding: 20},
 });
 
-const CardItem = ({obj: {title, desc, image, text}}) => {
+const CardItem = ({title, desc, imageUri, text}) => (
   <View>
     <Text style={card.title}>{title}</Text>
     <Text style={card.desc}>{desc}</Text>
-    <Image style={card.image} source={{uri: image}} />
+    <Image style={card.image} source={{uri: imageUri}} />
     <Text style={card.text}>{text}</Text>
-  </View>;
-};
+  </View>
+);
 
 export default CardItem;
