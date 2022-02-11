@@ -1,6 +1,7 @@
 import React from 'react';
 import {FlatList, View, Text, TouchableOpacityBase} from 'react-native';
 import CardItem from './components/CardItem';
+import Separator from './components/Separator';
 // import Icons from 'react-native-vector-icons/FontAwesome';
 
 const usersData = [
@@ -34,12 +35,15 @@ const App = () => (
       data={usersData}
       // renderItem={({item}) => CardItem{{...item}}}
       renderItem={({item}) => {
+        <View>
         <CardItem
           title={item.title}
           desc={item.desc}
           imageUri={item.imageUri}
           text={item.text}
-        />;
+        />
+        <Separator />;
+        </View>
       }}
     />
   </View>
