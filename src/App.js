@@ -1,26 +1,29 @@
 import React from 'react';
-import {FlatList, View, Text, TouchableOpacityBase} from 'react-native';
+import {FlatList, View} from 'react-native';
 import CardItem from './components/CardItem';
 import Separator from './components/Separator';
 // import Icons from 'react-native-vector-icons/FontAwesome';
 
 const usersData = [
   {
-    title: 'This is a Title.',
+    title: 'Que lugar mais lindo!',
+    location: 'Osasco',
     desc: 'This is a Description.',
     imageUri:
       'https://cdn.pocket-lint.com/r/s/1200x/assets/images/151442-cameras-feature-stunning-photos-from-the-national-sony-world-photography-awards-2020-image1-evuxphd3mr.jpg',
     text: "This is a very long text, very very long, so long that's not even possible to describe with words how insanity big this is, and it even has multiple lines, as you can see, very long indeed.",
   },
   {
-    title: 'This is a Title2.',
+    title: 'Que lugar mais lindo!',
+    location: 'Itapevi',
     desc: 'This is a Description2.',
     imageUri:
       'https://cdn.pocket-lint.com/r/s/1200x/assets/images/151442-cameras-feature-stunning-photos-from-the-national-sony-world-photography-awards-2020-image1-evuxphd3mr.jpg',
     text: "This is a very long text, very very long, so long that's not even possible to describe with words how insanity big this is, and it even has multiple lines, as you can see, very long indeed.",
   },
   {
-    title: 'This is a Title3.',
+    title: 'Que lugar mais lindo!',
+    location: 'Barueri',
     desc: 'This is a Description3.',
     imageUri:
       'https://cdn.pocket-lint.com/r/s/1200x/assets/images/151442-cameras-feature-stunning-photos-from-the-national-sony-world-photography-awards-2020-image1-evuxphd3mr.jpg',
@@ -29,22 +32,11 @@ const usersData = [
 ];
 
 const App = () => (
-  <View style={{backgroundColor: '#999999'}}>
-    <Text>Hello World</Text>
+  <View>
     <FlatList
       data={usersData}
-      // renderItem={({item}) => CardItem{{...item}}}
-      renderItem={({item}) => {
-        <View>
-        <CardItem
-          title={item.title}
-          desc={item.desc}
-          imageUri={item.imageUri}
-          text={item.text}
-        />
-        <Separator />;
-        </View>
-      }}
+      ItemSeparatorComponent={() => <Separator />}
+      renderItem={({item}) => CardItem({...item})}
     />
   </View>
 );
