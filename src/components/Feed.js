@@ -1,6 +1,7 @@
+import {FlatList, View} from 'react-native';
 import React from 'react';
-import {SafeAreaView} from 'react-native';
-import Feed from './components/Feed';
+import Separator from './Separator';
+import CardItem from './CardItem';
 
 const usersData = [
   {
@@ -29,10 +30,18 @@ const usersData = [
   },
 ];
 
-const App = () => (
-  <SafeAreaView>
-    <Feed />
-  </SafeAreaView>
-);
+const Feed = () => {
+  return (
+    <View>
+      <FlatList
+        data={usersData}
+        ItemSeparatorComponent={() => <Separator />}
+        renderItem={({item}) => CardItem({...item})}
+      />
+    </View>
+  );
+};
 
-export default App;
+export default Feed;
+
+// const styles = StyleSheet.create({});

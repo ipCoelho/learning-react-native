@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, Image, StyleSheet} from 'react-native';
+import {View, Text, Image, StyleSheet, TouchableOpacity} from 'react-native';
 import {heart, heart_o, bookmark, bookmark_o} from '../assets/vectors';
 import TouchableIcon from './TouchableIcon';
 
@@ -29,15 +29,19 @@ const card = StyleSheet.create({
   },
   padding: {padding: 20},
   flexRow: {flexDirection: 'row'},
-  gap: {marginRight: 10},
+  gap: {marginRight: 5},
 });
+
+const handleImageClick = text => console.log(text);
 
 const CardItem = ({title, location, imageUri, text}) => {
   return (
     <View style={card.padding}>
       <Text style={card.title}>{title}</Text>
       <Text style={card.desc}>{location}</Text>
-      <Image style={card.image} source={{uri: imageUri}} />
+      <TouchableOpacity onPress={() => handleImageClick(title)}>
+        <Image style={card.image} source={{uri: imageUri}} />
+      </TouchableOpacity>
       <View style={card.flexRow}>
         <TouchableIcon
           style={card.gap}
