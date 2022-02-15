@@ -39,8 +39,6 @@ const CardItem = ({title, location, imageUri, text}) => {
       <Text style={card.desc}>{location}</Text>
       <Image style={card.image} source={{uri: imageUri}} />
       <View style={card.flexRow}>
-        {/* <TouchableIcon {...{heartF, heart}} /> */}
-        {/* <TouchableIcon {...{bookmarkF, bookmark}} /> */}
         <TouchableIcon
           style={card.gap}
           iconChecked={heart_o}
