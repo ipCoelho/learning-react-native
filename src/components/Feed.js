@@ -36,7 +36,7 @@ const Feed = () => {
       <FlatList
         data={usersData}
         ItemSeparatorComponent={() => <Separator />}
-        renderItem={({item}) => CardItem({...item})}
+        renderItem={({item}) => <CardItem {...item} />}
       />
     </View>
   );

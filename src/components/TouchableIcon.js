@@ -1,10 +1,19 @@
 import React, {useState} from 'react';
 import {TouchableOpacity, View} from 'react-native';
 
-const TouchableIcon = ({iconChecked, iconUnchecked, style}) => {
-  const [checked, setChecked] = useState(false);
+const TouchableIcon = ({
+  iconChecked,
+  iconUnchecked,
+  style,
+  onPress,
+  iconState = false,
+}) => {
+  const [checked, setChecked] = useState(iconState);
 
-  const handleChecked = () => setChecked(!checked);
+  const handleChecked = () => {
+    setChecked(!checked);
+    onPress(checked, iconChecked);
+  };
 
   return (
     <TouchableOpacity onPress={handleChecked}>
