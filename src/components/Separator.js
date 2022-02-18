@@ -5,7 +5,7 @@ const style = StyleSheet.create({
   separator: {
     width: '90%',
     height: 5,
-    backgroundColor: '#999999',
+    backgroundColor: 'grey',
     alignSelf: 'center',
     borderRadius: 30,
   },

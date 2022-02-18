@@ -11,10 +11,12 @@ const TouchableIcon = ({
   const [checked, setChecked] = useState(iconState);
 
   const handleChecked = () => {
-    setChecked(!checked);
-    onPress(checked, iconChecked);
+    const newState = !checked;
+    setChecked(newState);
+    onPress(newState);
   };
 
+  // let icon = checked ? iconChecked : iconUnchecked;
   return (
     <TouchableOpacity onPress={handleChecked}>
       <View {...style}>{checked ? iconChecked : iconUnchecked}</View>

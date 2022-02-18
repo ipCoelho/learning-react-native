@@ -1,10 +1,12 @@
 import React from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-// Blank vectors.
-export const bookmark = <Icon name="bookmark" size={20} color="#000000" />;
-export const heart = <Icon name="heart" size={20} color="#e30000" />;
-
 // Filled vectors.
-export const bookmark_o = <Icon name="bookmark-o" size={20} color="#000000" />;
-export const heart_o = <Icon name="heart-o" size={20} color="#e30000" />;
+export const bookmark = <Icon name="bookmark" size={25} color="#000000" />;
+export const heart = <Icon name="heart" size={25} color="#e30000" />;
+
+// Blank vectors.
+export const bookmarkOutlined = (
+  <Icon name="bookmark-o" size={25} color="#000000" />
+);
+export const heartOutlined = <Icon name="heart-o" size={25} color="#e30000" />;
